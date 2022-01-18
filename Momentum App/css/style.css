@@ -1,3 +1,25 @@
+body {
+  background-size: cover;
+  background-position: center center;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+  color: white;
+}
+
 .hidden {
   display: none;
+}
+
+.clock {
+  font-size: 10em;
+}
+
+.date {
+  font-size: 2em;
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
 }
