@@ -1,4 +1,8 @@
 .right {
   width: 50%;
   height: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  margin: 30px;
+  margin-right: 60px;
+  padding: 30px;
 }

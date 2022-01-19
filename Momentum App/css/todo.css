@@ -9,7 +9,6 @@
 .todo-list {
   overflow: scroll;
   height: 80%;
-  width: 90%;
 }
 
 .toDo__button {
