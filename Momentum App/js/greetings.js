@@ -19,7 +19,7 @@ function onLoginSubmit(e) {
 
 // greeting에 글자 넣어주고 히든 클래스 없애서 보여주기 
 function setGreeting(username) {
-    greeting.innerText = `Hello, ${username}`;
+    greeting.innerText = `Hello, ${username} 👋🏻`;
     greeting.classList.remove(HIDDEN_CLASNAME);
 }
 

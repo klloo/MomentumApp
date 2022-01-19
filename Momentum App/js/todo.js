@@ -23,7 +23,8 @@ function paintToDo(newTodo) {
     button.addEventListener('click', deleteToDo);
     li.appendChild(span);
     li.appendChild(button);
-    span.innerText = newTodo.text;
+    li.classList.add('list');
+    span.innerText = `- ${newTodo.text}`;
     toDoList.appendChild(li);
 }
 
