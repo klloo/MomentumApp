@@ -5,9 +5,15 @@
   font-size: 12px;
   position: absolute;
   bottom: 25px;
-  left: 25px;
 }
 
 .location:hover {
   opacity: 1;
+}
+
+@media (max-width: 830px) {
+  .location {
+    position: inherit;
+    margin: 20px;
+  }
 }
