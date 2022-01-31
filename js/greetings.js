@@ -18,7 +18,7 @@ function onLoginSubmit(e) {
     loginForm.reset();
     setGreeting(username);
 }
-
+// 이름 삭제
 function deleteName() {
     localStorage.removeItem(USERNAME_KEY);
     this.remove();
@@ -27,7 +27,7 @@ function deleteName() {
 
 // greeting에 글자 넣어주고 히든 클래스 없애서 보여주기 
 function setGreeting(username) {
-    const span = document.createElement('span');
+    const span = document.querySelector('#del-button-span');
     const delButton = document.createElement('button');
     delButton.addEventListener('click',deleteName);
     delButton.innerText = 'delete my name';
@@ -37,10 +37,9 @@ function setGreeting(username) {
     greeting.classList.remove(HIDDEN_CLASNAME);
 }
 
-const savedUsername = localStorage.getItem(USERNAME_KEY);
-
 // 로컬 스토리지에 값이 없으면 로그인 폼의 히든 클래스 없애서 보여주기 
 function paintGreeting() {
+    const savedUsername = localStorage.getItem(USERNAME_KEY);
     if(savedUsername === null) {
         loginForm.classList.remove(HIDDEN_CLASNAME);
         greeting.classList.add(HIDDEN_CLASNAME);
