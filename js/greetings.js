@@ -1,6 +1,7 @@
 const loginForm = document.querySelector('#login-form');
 const loginInput = document.querySelector('#login-form input');
 
+const userInfo = document.querySelector('#user-info');
 const greeting = document.querySelector('#greeting');
 
 const HIDDEN_CLASNAME = 'hidden';
@@ -14,11 +15,24 @@ function onLoginSubmit(e) {
     localStorage.setItem(USERNAME_KEY,username);
     
     loginForm.classList.add(HIDDEN_CLASNAME);
+    loginForm.reset();
     setGreeting(username);
+}
+
+function deleteName() {
+    localStorage.removeItem(USERNAME_KEY);
+    this.remove();
+    paintGreeting();
 }
 
 // greeting에 글자 넣어주고 히든 클래스 없애서 보여주기 
 function setGreeting(username) {
+    const span = document.createElement('span');
+    const delButton = document.createElement('button');
+    delButton.addEventListener('click',deleteName);
+    delButton.innerText = 'delete my name';
+    span.appendChild(delButton);
+    userInfo.appendChild(span);
     greeting.innerText = `Hello, ${username} 👋🏻`;
     greeting.classList.remove(HIDDEN_CLASNAME);
 }
@@ -26,9 +40,13 @@ function setGreeting(username) {
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 // 로컬 스토리지에 값이 없으면 로그인 폼의 히든 클래스 없애서 보여주기 
-if(savedUsername === null) {
-    loginForm.classList.remove(HIDDEN_CLASNAME);
-    loginForm.addEventListener('submit', onLoginSubmit);
-} else {
-    setGreeting(savedUsername);
+function paintGreeting() {
+    if(savedUsername === null) {
+        loginForm.classList.remove(HIDDEN_CLASNAME);
+        greeting.classList.add(HIDDEN_CLASNAME);
+        loginForm.addEventListener('submit', onLoginSubmit);
+    } else {
+        setGreeting(savedUsername);
+    }
 }
+paintGreeting();
