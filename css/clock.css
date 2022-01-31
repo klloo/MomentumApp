@@ -1,0 +1,18 @@
+.clock {
+  font-size: 10em;
+}
+.date {
+  font-style: italic;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 830px) {
+  .clock {
+    font-size: 5em;
+    margin: 30px;
+  }
+  .date {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,28 @@
+.list {
+  margin-bottom: 10px;
+}
+
+.toDo {
+  font-size: 22px;
+}
+
+.todo-list {
+  overflow: scroll;
+  height: 70%;
+}
+
+.toDo__button {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 830px) {
+  .toDo {
+    font-size: 18px;
+  }
+}
